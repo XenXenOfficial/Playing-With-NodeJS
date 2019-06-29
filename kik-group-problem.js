@@ -7,10 +7,7 @@ function checkPrime(prime){
 }
 
 function createPrimes(max, min=2){
-    //Constraints listed in the file
-    if(min<=2) return false;
-    if(100<=max) return false;
-    if(max-min<=35) return false;
+
     //[...Array(max).keys()] is just a fancy way of creating an array of integers
     //Filter just a nifty function that'll remove items that don't pass a function
     //In this case, it's just checking if its a prime.
@@ -47,6 +44,10 @@ function fibonacci(min, max, length){
 }
 
 function start(n2, n1){
+    //Constraints listed in the file
+    if(n1<=2) return false;
+    if(100<=n2) return false;
+    if(n2-n1<=35) return false;
     let primes = createPrimes(n2, n1);
     let combinations = createCombinations(primes);
     //Gets new primes from the combinations.
@@ -61,4 +62,4 @@ Smallest: ${smallest}\n\nLargest: ${largest}\n\nTherefore, the last number of a 
 ${largest} as the first 2 numbers is ${lastNumFib}`)
 }
 
-start(80, 17)
+start(8000, 17)
