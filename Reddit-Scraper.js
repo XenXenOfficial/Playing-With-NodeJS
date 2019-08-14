@@ -1,6 +1,6 @@
 const puppet  = require('puppeteer');
 const {JSDOM} = require('JSDOM');
-const url     = 'https://www.reddit.com/'
+const url     = 'https://www.reddit.com'
 const reddit  = async () =>{
     const browser = await puppet.launch();
     const page    = await browser.newPage();
@@ -17,7 +17,7 @@ const reddit  = async () =>{
             votes=votes.innerHTML;
             const postName = (e.querySelector('._eYtD2XCVieq6emjKBH3m')).innerHTML; //Get post names
             const commentsAmount = (e.querySelector('.FHCV02u6Cp2zYL0fhQPsO')).innerHTML; //Get comments
-            const postUrl = 'http://reddit.com'+(e.querySelector('.SQnoC3ObvgnGjWt90zD9Z._2INHSNB8V5eaWp4P0rY_mE')).href; //Get post URL and append reddit
+            const postUrl = url+(e.querySelector('.SQnoC3ObvgnGjWt90zD9Z._2INHSNB8V5eaWp4P0rY_mE')).href; //Get post URL and append reddit
             return{votes,postName,commentsAmount,postUrl}
         }
         return Array.from(divElements).map(parse) //Map HTMLDivElements to the function 
