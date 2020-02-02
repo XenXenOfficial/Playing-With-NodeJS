@@ -13,7 +13,7 @@ console.log(`Before stuffing: ${bit_array} -- ${bit_array.length} characters`);
  */
 const stuff = (_, s = '', i = 0, x = 0) => { //User only requires to input the array.
 	if(x == _.length) return s; //If there's no more bits in the array to check, return the string
-	const O = +_[x]; //Assign O to the xth bit to reduce accessing the array.
+	const O = +_[x++]; //Assign O to the xth bit to reduce accessing the array.
 	if(O) i++; //Check if the bit is a 1, if so, increase i
 	else i = 0; //If at any point it isn't, go back to 0.
 	s += O; //Assign the xth character of the string
@@ -21,7 +21,7 @@ const stuff = (_, s = '', i = 0, x = 0) => { //User only requires to input the a
 		s += 0; //Add on a 0 to the 1.
 		i = 0; //Reset the i value
 	}
-	return stuff(_, s, i, ++x); //Recursively call the function
+	return stuff(_, s, i, x); //Recursively call the function
 } //Pure function.
 
 const stuffed_bits = stuff(bit_array.split(''));
