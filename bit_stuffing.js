@@ -9,6 +9,7 @@ console.log(`Before stuffing: ${bit_array} -- ${bit_array.length} characters`);
  * @param _ An array of 1's and 0's
  * @argument s The string being manually created
  * @argument i The temporary value following the number of 1's 
+ * @argument x The index to access the array
  */
 const stuff = (_, s = '', i = 0, x = 0) => { //User only requires to input the array.
 	if(x == _.length) return s; //If there's no more bits in the array to check, return the string
