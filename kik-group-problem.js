@@ -49,7 +49,7 @@ function start(n2, n1){
     let primes = createPrimes(n2, n1);
     let combinations = createCombinations(primes);
     //Gets new primes from the combinations.
-    let newPrimes = combinations.filter(_=>checkPrime(_));
+    let newPrimes = combinations.filter(checkPrime);
     //The numbers are already sorted, so the min value is the first value.
     let smallest = primes[0];
     //Same goes for largest, but the last value.
