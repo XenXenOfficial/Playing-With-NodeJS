@@ -11,9 +11,7 @@ function createPrimes(max, min=2){
     //[...Array(max).keys()] is just a fancy way of creating an array of integers
     //Filter just a nifty function that'll remove items that don't pass a function
     //In this case, it's just checking if its a prime.
-    return [...Array(max).keys()].splice(min, max).filter(_=>{
-        return checkPrime(_)
-    });
+    return [...Array(max).keys()].splice(min, max).filter(checkPrime);
 }
 
 function createCombinations(primes){
